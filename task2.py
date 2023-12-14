@@ -8,8 +8,7 @@ def timed_output(function: Callable):
 
     def my_write(string_text):
         curr_time = time.strftime("[%Y-%m-%d %H:%M:%S]: ")
-        original_write(curr_time + string_text)
-        sys.stdout.flush()
+        original_write(curr_time + string_text + "\r")
 
     def wrapper(*args, **kwargs):
         sys.stdout.write = my_write
