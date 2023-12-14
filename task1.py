@@ -1,11 +1,11 @@
 import sys
 from datetime import datetime
-import time
+
 
 original_write = sys.stdout.write
 
 
-def my_write(string_text):
+def my_write(string_text: str):
     curr_time = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]: ")
     original_write(curr_time + string_text + "\r")
 

@@ -1,5 +1,5 @@
 import sys
-import time
+from datetime import datetime
 from typing import Callable
 
 
@@ -7,7 +7,7 @@ def timed_output(function: Callable):
     original_write = sys.stdout.write
 
     def my_write(string_text):
-        curr_time = time.strftime("[%Y-%m-%d %H:%M:%S]: ")
+        curr_time = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]: ")
         original_write(curr_time + string_text + "\r")
 
     def wrapper(*args, **kwargs):
